@@ -1,10 +1,11 @@
 <h2>Danh sách bài đã xuất bản</h2>
 
-<table border="1" cellpadding="5">
+<table border="1">
     <tr>
         <th>Tiêu đề</th>
         <th>Tác giả</th>
         <th>Lượt xem</th>
+        <th>Nhãn</th>
     </tr>
 
     @foreach (var post in ViewBag.DanhSach)
@@ -13,29 +14,20 @@
             <td>@post.Title</td>
             <td>@post.Author</td>
             <td>@post.ViewCount</td>
+            <td>@post.NhanPhoBien()</td>
         </tr>
     }
 </table>
 
-<hr />
+<hr>
 
 <h3>Tổng lượt xem: @ViewBag.TongLuotXem</h3>
 
-<hr />
+<hr>
 
-<h3>Bài viết nhiều lượt xem nhất</h3>
+<h3>Bài nhiều lượt xem nhất</h3>
 
-<p>
-    Tiêu đề:
-    <strong>@ViewBag.TopPost.Title</strong>
-</p>
-
-<p>
-    Tác giả:
-    <strong>@ViewBag.TopPost.Author</strong>
-</p>
-
-<p>
-    Lượt xem:
-    <strong>@ViewBag.TopPost.ViewCount</strong>
-</p>
+<p>Tiêu đề: <b>@ViewBag.TopPost.Title</b></p>
+<p>Tác giả: @ViewBag.TopPost.Author</p>
+<p>Lượt xem: @ViewBag.TopPost.ViewCount</p>
+<p>Nhãn: @ViewBag.TopPost.NhanPhoBien()</p>

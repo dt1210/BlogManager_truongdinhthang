@@ -8,10 +8,11 @@ public class Post
     public DateTime PublishedAt { get; set; } = DateTime.Now;
     public bool IsPublished { get; set; }
 
-    // Bổ sung
+
     public string Author { get; set; } = string.Empty;
     public int ViewCount { get; set; }
 
     public string MoTaNgan()
         => $"{Title} ({PublishedAt:dd/MM/yyyy})";
+    public string NhanPhoBien() => ViewCount >= 100 ? "Phổ biến" : "Thường";
 }

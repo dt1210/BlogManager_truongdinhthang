@@ -1,9 +1,41 @@
-    <h1> Thử nghiệm C# và LINQ</h1>
-    <p>Số bài đã xuất bản: <strong>@ViewBag.SoDaXuatBan</p>
+<h2>Danh sách bài đã xuất bản</h2>
 
-    <ul>
-@foreach (var tieuDe in ViewBag.TieuDe)
-{
-    <li>@tieuDe</li>
-}
-    </ul>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Tiêu đề</th>
+        <th>Tác giả</th>
+        <th>Lượt xem</th>
+    </tr>
+
+    @foreach (var post in ViewBag.DanhSach)
+    {
+        <tr>
+            <td>@post.Title</td>
+            <td>@post.Author</td>
+            <td>@post.ViewCount</td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<h3>Tổng lượt xem: @ViewBag.TongLuotXem</h3>
+
+<hr />
+
+<h3>Bài viết nhiều lượt xem nhất</h3>
+
+<p>
+    Tiêu đề:
+    <strong>@ViewBag.TopPost.Title</strong>
+</p>
+
+<p>
+    Tác giả:
+    <strong>@ViewBag.TopPost.Author</strong>
+</p>
+
+<p>
+    Lượt xem:
+    <strong>@ViewBag.TopPost.ViewCount</strong>
+</p>
